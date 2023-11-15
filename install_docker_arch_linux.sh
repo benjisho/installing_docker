@@ -1,24 +1,29 @@
 #!/bin/bash
 
-# Script to Install Docker Desktop on Arch Linux
-
-# Step 1: Install gnome-terminal (for non-Gnome Desktop environments)
+# Prerequisites
 echo "Installing gnome-terminal..."
 sudo pacman -S gnome-terminal
 
-# Step 2: Install Docker client binary
-# Note: This step assumes you have already downloaded the Docker client binary and it is in the current directory.
-# Replace '<version>' with the actual version number you have downloaded.
-echo "Installing Docker client binary..."
-sudo pacman -U docker-desktop-<version>-<arch>.pkg.tar.zst
+# Download the Docker Desktop package
+echo "Downloading Docker Desktop package..."
+wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.25.1-x86_64.pkg.tar.zst
 
-# Step 3: Launch Docker Desktop
+# Install Docker Desktop
+echo "Installing Docker Desktop..."
+sudo pacman -U ./docker-desktop-4.25.1-x86_64.pkg.tar.zst
+
+# Start Docker Desktop
 echo "Starting Docker Desktop..."
 systemctl --user start docker-desktop
 
-# Verify Docker Desktop Installation
-echo "Verifying Docker Desktop installation..."
+# Check the versions of Docker Compose and Docker
+echo "Checking the versions of Docker Compose and Docker..."
 docker compose version
 docker --version
+docker version
+
+# Enable Docker Desktop to start on login
+echo "Enabling Docker Desktop to start on login..."
+systemctl --user enable docker-desktop
 
 echo "Docker Desktop installation completed successfully!"
