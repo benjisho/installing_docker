@@ -4,7 +4,7 @@
 
 ### (Optional) Clone the repository 
 ```
-git clone 
+git clone https://github.com/benjisho/installing_docker.git
 ```
 ### Give the relevant file execution permittions
 ```
