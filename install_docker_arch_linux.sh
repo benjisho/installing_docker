@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# https://docs.docker.com/desktop/install/archlinux/
 # Prerequisites
 echo "Installing gnome-terminal..."
 sudo pacman -S gnome-terminal
