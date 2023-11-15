@@ -8,7 +8,7 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
     sudo apt-get remove -y $pkg
 done
 
-# Step 2: Set Up Docker's apt Repository
+# Step 2: Set Up Docker apt Repository
 echo "Setting up Docker's apt repository..."
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl gnupg
