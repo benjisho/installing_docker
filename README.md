@@ -1,6 +1,6 @@
 # installing_docker
 
-A buch of bash scripts to install docker on different Operating Systems
+A bunch of bash scripts to install docker on different Operating Systems
 
 ## Running a script file
 
