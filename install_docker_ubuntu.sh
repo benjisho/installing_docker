@@ -2,13 +2,11 @@
 
 # Script to Install Docker on Ubuntu
 
-# Step 1: Uninstall old versions
 echo "Uninstalling old or conflicting Docker packages..."
 for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
     sudo apt-get remove -y $pkg
 done
 
-# Step 2: Set Up Docker apt Repository
 echo "Setting up Docker's apt repository..."
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl gnupg
@@ -24,11 +22,9 @@ echo \
 
 sudo apt-get update
 
-# Step 3: Install Docker Engine and Plugins
 echo "Installing Docker Engine, Docker Buildx Plugin, and Docker Compose Plugin..."
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Step 4: Verify Installation
 echo "Verifying Docker installation..."
 sudo docker run hello-world
 
