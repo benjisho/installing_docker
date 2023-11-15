@@ -2,13 +2,11 @@
 
 # Script to Install Docker on Debian 11.8
 
-# Step 1: Uninstall old versions
 echo "Uninstalling old or conflicting Docker packages..."
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do
     sudo apt-get remove -y $pkg
 done
 
-# Step 2: Set Up Docker apt Repository
 echo "Setting up Docker's apt repository..."
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl gnupg
@@ -24,11 +22,9 @@ echo \
 
 sudo apt-get update
 
-# Step 3: Install Docker Engine
 echo "Installing Docker Engine..."
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-# Step 4: Verify Installation
 echo "Verifying Docker installation..."
 sudo docker run hello-world
 
